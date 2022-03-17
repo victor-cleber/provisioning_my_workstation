@@ -1,0 +1,21 @@
+---
+- name: Provisioning my new localhost 
+  hosts: 127.0.0.1
+  become: true # means ansible should become root to run this playbook
+
+  tasks:
+  - name: 01 - Apt update
+    apt:
+      update_cache: yes
+
+  - name: 01 - Install git
+    apt:
+      name: git
+      state: present
+
+  - name: 02 - Install vim
+    apt:
+      name: vim
+      state: present
+
+
